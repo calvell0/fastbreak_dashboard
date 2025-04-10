@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getPlayerStats } from '../stats/route';
+import { getPlayerStats } from '@/lib/utils/playerStats';
 
 
 interface LeaderboardEntry {
