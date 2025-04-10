@@ -2,20 +2,34 @@
 
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function LoginPage() {
   const { user, isLoading } = useUser();
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (user) {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (user && mounted) {
       router.push('/dashboard');
     }
-  }, [user, router]);
+  }, [user, router, mounted]);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (!mounted || isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1d1160] to-[#00788c]">
+        <div className="bg-white p-8 rounded-lg shadow-xl w-full max-w-md text-center">
+          <div className="animate-pulse">Loading...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1d1160] to-[#00788c]">
@@ -35,12 +49,12 @@ export default function LoginPage() {
           />
         </div>
 
-        <a
+        <Link
           href="/api/auth/login"
           className="w-full bg-[#00788c] text-white py-3 px-4 rounded-lg flex items-center justify-center font-semibold hover:bg-[#1d1160] transition-colors duration-300"
         >
           Sign In to Continue
-        </a>
+        </Link>
       </div>
     </div>
   );
