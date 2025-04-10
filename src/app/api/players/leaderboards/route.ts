@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { Player } from '@/lib/data/mockData';
 import { getPlayerStats } from '../stats/route';
 
 

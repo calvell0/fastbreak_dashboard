@@ -41,7 +41,7 @@ export default function LeaderboardWidget() {
         setLeaderboards(data.leaderboards);
         setLoading(false);
       } catch (err) {
-        setError('Error loading leaderboards');
+        setError('Error loading leaderboards: ' + err);
         setLoading(false);
       }
     };
