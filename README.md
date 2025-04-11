@@ -1,3 +1,9 @@
+**Fastbreak NBA Dashboard**
+
+This is my first Next.js project so it's a little barebones. Some considerations: I chose to mock the player stats because Balldontlie doesn't appear to provide team/player stats in their free plan - I would have used ESPN's public undocumented API like I have for another project but by the time I realized Balldontlie charged for stats it was a bit too late. Also, the `players/stats` API route does some light transformation to calculate players' efficiency.
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

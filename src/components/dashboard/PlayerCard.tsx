@@ -29,19 +29,19 @@ export default function PlayerCard({ name, position, number, stats }: PlayerCard
         <div className="grid grid-cols-2 gap-4">
           <div className="text-center">
             <p className="text-gray-600 text-sm">PPG</p>
-            <p className="text-xl font-bold">{stats.ppg}</p>
+            <p className="text-xl font-bold text-gray-900">{stats.ppg}</p>
           </div>
           <div className="text-center">
             <p className="text-gray-600 text-sm">APG</p>
-            <p className="text-xl font-bold">{stats.apg}</p>
+            <p className="text-xl font-bold text-gray-900">{stats.apg}</p>
           </div>
           <div className="text-center">
             <p className="text-gray-600 text-sm">RPG</p>
-            <p className="text-xl font-bold">{stats.rpg}</p>
+            <p className="text-xl font-bold text-gray-900">{stats.rpg}</p>
           </div>
           <div className="text-center">
             <p className="text-gray-600 text-sm">FG%</p>
-            <p className="text-xl font-bold">{stats.fg}</p>
+            <p className="text-xl font-bold text-gray-900">{stats.fg}</p>
           </div>
         </div>
       </div>
